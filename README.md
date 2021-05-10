@@ -9,4 +9,4 @@ https://user-images.githubusercontent.com/1647932/117616227-d5e87b80-b138-11eb-8
 
 ## See Also
 
-[**Codebot.Fractals**](https://github.com/sysrpl/Codebot.Fractals/) a similar program using software based rendering with options for comptation across multiple CPU cores.
+[**Codebot.Fractals**](https://github.com/sysrpl/Codebot.Fractals/) a similar program using software based rendering with options for computation across multiple CPU cores.
