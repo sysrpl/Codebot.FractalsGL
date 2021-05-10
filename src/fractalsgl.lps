@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="fractalsgl.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FractalsGL"/>
+        <CursorPos X="29" Y="18"/>
+        <UsageCount Value="65"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FractalForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Main"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="65"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="fractalscene.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FractalScene"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="48" Y="152"/>
+        <UsageCount Value="65"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../Libraries/cross.codebot/source/codebot.gles.pas"/>
+        <UnitName Value="Codebot.GLES"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="419"/>
+        <CursorPos X="19" Y="451"/>
+        <UsageCount Value="13"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../Libraries/cross.codebot/source/codebot.render.scenes.pas"/>
+        <UnitName Value="Codebot.Render.Scenes"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="52"/>
+        <CursorPos Y="67"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../Libraries/cross.codebot/source/codebot.render.contexts.pas"/>
+        <UnitName Value="Codebot.Render.Contexts"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="624"/>
+        <CursorPos X="3" Y="628"/>
+        <UsageCount Value="13"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../Libraries/cross.codebot/source/codebot.render.shaders.pas"/>
+        <UnitName Value="Codebot.Render.Shaders"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="317"/>
+        <CursorPos Y="356"/>
+        <UsageCount Value="13"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../Libraries/cross.codebot/source/codebot.render.buffers.pas"/>
+        <UnitName Value="Codebot.Render.Buffers"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="19" Y="32"/>
+        <UsageCount Value="13"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../Libraries/cross.codebot/source/codebot.render.scenes.controller.pas"/>
+        <UnitName Value="Codebot.Render.Scenes.Controller"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="23"/>
+        <CursorPos X="15" Y="40"/>
+        <UsageCount Value="12"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../Libraries/cross.codebot/source/codebot.render.textures.pas"/>
+        <UnitName Value="Codebot.Render.Textures"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="51" Y="43"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../fpc/rtl/inc/systemh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="431"/>
+        <CursorPos X="3" Y="451"/>
+        <UsageCount Value="7"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Development/Pascal/Libraries/cross.codebot/source/codebot_render/codebot.render.contexts.pas"/>
+        <UnitName Value="Codebot.Render.Contexts"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="600"/>
+        <CursorPos Y="620"/>
+        <UsageCount Value="25"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Development/Pascal/lazarus/components/opengl/openglcontext.pas"/>
+        <UnitName Value="OpenGLContext"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="192"/>
+        <CursorPos Y="220"/>
+        <UsageCount Value="25"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Development/Pascal/Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <UnitName Value="Codebot.Render.Shaders"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="337"/>
+        <CursorPos Y="361"/>
+        <UsageCount Value="25"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Development/Pascal/Libraries/cross.codebot/source/codebot/codebot.system.pas"/>
+        <UnitName Value="Codebot.System"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2750"/>
+        <CursorPos Y="2757"/>
+        <UsageCount Value="25"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Development/Pascal/Libraries/cross.codebot/source/codebot_render/codebot.render.buffers.pas"/>
+        <UnitName Value="Codebot.Render.Buffers"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="169"/>
+        <CursorPos X="3" Y="204"/>
+        <UsageCount Value="25"/>
+        <Bookmarks Count="1">
+          <Item0 X="38" Y="686" ID="1"/>
+        </Bookmarks>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Development/Pascal/Libraries/cross.codebot/source/codebot_render/codebot.render.textures.pas"/>
+        <UnitName Value="Codebot.Render.Textures"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="25"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Development/Pascal/Libraries/cross.codebot/source/codebot/codebot.graphics.types.pas"/>
+        <UnitName Value="Codebot.Graphics.Types"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="268"/>
+        <UsageCount Value="24"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Development/Pascal/Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
+        <UnitName Value="Codebot.Render.Scenes.Controller"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="67"/>
+        <CursorPos X="3" Y="17"/>
+        <UsageCount Value="11"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="14">
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="124" TopLine="100"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="123" Column="11" TopLine="105"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="118" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="119" TopLine="103"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="118" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="112" Column="66" TopLine="92"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="114" Column="66" TopLine="94"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="121" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="77" TopLine="6"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="78" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="123" Column="7" TopLine="113"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="129" TopLine="98"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="11" Column="35" TopLine="11"/>
+      </Position>
+      <Position>
+        <Filename Value="fractalsgl.lpr"/>
+        <Caret Line="18" Column="29"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
