@@ -1,5 +1,8 @@
 
 # Codebot.FractalsGL
+A program to explore the Mandelbrot set using your GPU.
+
+## What is FractalsGL
 
 FractalsGL is a cross platform desktop interactive Mandelbrot set explorer program that uses OpenGL shaders to render and navigate the Mandelbrot set in real time. It has two modes of operation. In the first mode you can use the mouse to navigate to different areas of Mandelbrot. In the second mode you are taken on an automated tour of Mandelbrot.
 
