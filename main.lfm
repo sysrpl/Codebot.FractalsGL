@@ -1,0 +1,40 @@
+object FractalForm: TFractalForm
+  Left = 325
+  Height = 450
+  Top = 250
+  Width = 498
+  Caption = 'Mandelbrot Set'
+  ClientHeight = 450
+  ClientWidth = 498
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  object SceneControl: TOpenGLControl
+    Left = 8
+    Height = 290
+    Top = 8
+    Width = 344
+    MultiSampling = 0
+    OnMouseDown = SceneControlMouseDown
+    OnMouseMove = SceneControlMouseMove
+    OnMouseUp = SceneControlMouseUp
+  end
+  object HelpShape: TShape
+    Left = 8
+    Height = 24
+    Top = 304
+    Width = 344
+    Brush.Color = clHighlight
+    Pen.Color = clHighlight
+  end
+  object HelpLabel: TLabel
+    Left = 16
+    Height = 24
+    Top = 302
+    Width = 336
+    AutoSize = False
+    Caption = 'Press 1 to navigate or 2 to tour. Use the mouse buttons zoom.'
+    Layout = tlCenter
+    ParentColor = False
+  end
+end
