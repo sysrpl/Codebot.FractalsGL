@@ -8,7 +8,7 @@ FractalsGL is a cross platform desktop interactive Mandelbrot set explorer progr
 
 This program is part of a greater computer programming studies course taught to children using resources and tools from the [getlazarus website](https://www.getlazarus.org/learn/).
 
-https://user-images.githubusercontent.com/1647932/117616227-d5e87b80-b138-11eb-84fd-a37c53130808.mp4
+https://user-images.githubusercontent.com/1647932/117937688-437cdf00-b2d4-11eb-8b93-fb49375fa6c2.mp4
 
 ## See Also
 
