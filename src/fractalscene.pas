@@ -35,6 +35,7 @@ type
     procedure Render; override;
     procedure ClientToFractal(var X, Y: Double);
     procedure Drag(const Rect: TRectI);
+    procedure Pan(X, Y: Double);
     procedure MoveTo(const X, Y, Z: Double);
     property Angle: Double read FAngle write FAngle;
     property Zoom: Double read FZ write SetZoom;
@@ -92,9 +93,9 @@ procedure TFractalScene.Logic;
 begin
   if FCurrentProg = nil then
     Exit;
-  if IsKeyDown(VK_1) then
+  if IsKeyDown(VK_Q) then
     FCurrentProg := FZoomProg
-  else if IsKeyDown(VK_2) then
+  else if IsKeyDown(VK_W) then
     FCurrentProg := FTourProg;
 end;
 
@@ -172,6 +173,18 @@ begin
   else
     FDrag.Top := Rect.Bottom;
   FDrag.Height := Abs(Rect.Height);
+end;
+
+procedure TFractalScene.Pan(X, Y: Double);
+begin
+  if IsTour then
+    Exit;
+  if FMoving then
+    Exit;
+  X := X  / Width * 3 / FZ;
+  Y := Y / Width * -3 / FZ;
+  FX := FX + X;
+  FY := FY + Y;
 end;
 
 procedure TFractalScene.MoveTo(const X, Y, Z: Double);

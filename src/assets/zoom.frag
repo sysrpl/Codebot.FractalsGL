@@ -1,3 +1,5 @@
+#version 410
+ 
 // Mandelbrot Zoom
 
 #define itter 256
@@ -11,12 +13,12 @@ uniform float zoom;
 uniform bool drag;
 uniform vec4 rect;
 
-bool between(float a, float b) {
+bool between(double a, double b) {
 	return a >= b && a < b + 1.0;
 }
 
 void main() {
-	float select = 0.0;
+	double select = 0.0;
 	vec2 coord = gl_FragCoord.xy;
 	coord.y = resolution.y - coord.y;
 	if (drag)
@@ -28,20 +30,20 @@ void main() {
 				select = 0.5;
 		}
 	// locate the position 0, 0
-	vec2 c = (gl_FragCoord.xy -vec2(0.5) * resolution.xy) / vec2(resolution.x);
+	dvec2 c = (gl_FragCoord.xy -vec2(0.5) * resolution.xy) / vec2(resolution.x);
 	// apply a zoom facor
 	c.x = c.x * 3.0 / zoom;
 	c.y = c.y * -3.0 / -zoom;
 	// rotate c based on angle
 	float cosa = cos(0.2 * angle);
 	float sina = sin(0.2 * angle);
-	c = vec2(c.x * cosa - c.y * sina, c.x * sina + c.y  * cosa);
+	c = dvec2(c.x * cosa - c.y * sina, c.x * sina + c.y  * cosa);
 	// center c based on some input value
 	c += center;
 	// calculate the mandelbrot set
-	vec2 z = vec2(0.0);
-	float zxx = z.x * z.x;
-	float zyy = z.y * z.y;
+	dvec2 z = dvec2(0.0);
+	double zxx = z.x * z.x;
+	double zyy = z.y * z.y;
 	float count = 0.0;
 	for (int i = 0; i < itter; i++) {
 		if (zxx + zyy > 4.0)
@@ -56,7 +58,7 @@ void main() {
 	float r = 0.0, g = 0.0, b = 0.0;
 	float f = float(itter); 
 	if (count < f) {
-		float m = dot(z, z);
+		float m = float(dot(z, z)) * 1.5;
 		count = count + 1.0 - log2(0.5 * log2(m));
 		count = sqrt(count / f);
 		r = sin(PI2 * count + 0.5);
@@ -64,8 +66,8 @@ void main() {
 		b = cos(PI2 * count + 2.0);
 	}
 	if (select > 0.0) {
-		float blink = mix(0.8, 1.0, sin(time * 3.0));
+		double blink = mix(0.8, 1.0, sin(time * 3.0));
 		select = select * blink;
 	}
-	gl_FragColor = mix(vec4(r, g, b, 1.0), vec4(1.0), select);
+	gl_FragColor = mix(vec4(r, g, b, 1.0), vec4(1.0), float(select));
 }

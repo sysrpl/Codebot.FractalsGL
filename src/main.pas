@@ -15,21 +15,43 @@ uses
 type
   TFractalForm = class(TForm)
     HelpLabel: TLabel;
+    LasooButton: TSpeedButton;
+    GoButton: TSpeedButton;
+    InButton: TSpeedButton;
+    OutButton: TSpeedButton;
     SceneControl: TOpenGLControl;
     HelpShape: TShape;
+    PanButton: TSpeedButton;
+    Timer: TTimer;
+    XEdit: TEdit;
+    XLabel: TLabel;
+    YEdit: TEdit;
+    YLabel: TLabel;
+    ZoomEdit: TEdit;
+    ZoomLabel: TLabel;
+    procedure ApplicationProperties1ShowHint(var HintStr: string;
+      var CanShow: Boolean; var HintInfo: THintInfo);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure GoButtonClick(Sender: TObject);
+    procedure InButtonClick(Sender: TObject);
+    procedure OutButtonClick(Sender: TObject);
     procedure SceneControlMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure SceneControlMouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
     procedure SceneControlMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure TimerTimer(Sender: TObject);
+    procedure YEditKeyPress(Sender: TObject; var Key: char);
   private
     FController: TSceneController;
     FFractal: TFractalScene;
     FDragging: Boolean;
     FDrag: TRectI;
+    FPanning: Boolean;
+    FPan: TPointI;
   end;
 
 var
@@ -55,17 +77,108 @@ begin
   FFractal.X := -0.5;
 end;
 
+procedure TFractalForm.FormShow(Sender: TObject);
+begin
+  OnShow := nil;
+  SceneControl.SetFocus;
+end;
+
+procedure TFractalForm.GoButtonClick(Sender: TObject);
+var
+  X, Y, Z: Double;
+begin
+  Timer.Enabled := False;
+  Timer.Enabled := True;
+  SceneControl.SetFocus;
+  if FFractal.IsTour or FDragging or FPanning then
+    Exit;
+  X := StrToFloatDef(XEdit.Text, -100);
+  Y := StrToFloatDef(YEdit.Text, -100);
+  Z := StrToFloatDef(ZoomEdit.Text, 0);
+  if (X < -10) or (Y < -10) or (Z < 1.1) then
+    FFractal.MoveTo(-0.5, 0, 1)
+  else
+    FFractal.MoveTo(X, Y, Z);
+end;
+
+procedure TFractalForm.TimerTimer(Sender: TObject);
+begin
+  if FFractal.IsTour or FDragging or FPanning then
+    Exit;
+  if XEdit.Focused or YEdit.Focused or ZoomEdit.Focused then
+    Exit;
+  XEdit.Text := FloatToStr(FFractal.X);
+  YEdit.Text := FloatToStr(FFractal.Y);
+  ZoomEdit.Text := FloatToStr(FFractal.Zoom);
+end;
+
+procedure TFractalForm.YEditKeyPress(Sender: TObject; var Key: char);
+begin
+  if Key = ^M then
+    GoButtonClick(GoButton);
+end;
+
+procedure TFractalForm.InButtonClick(Sender: TObject);
+var
+  Z: Double;
+begin
+  Timer.Enabled := False;
+  Timer.Enabled := True;
+  SceneControl.SetFocus;
+  if FFractal.IsTour or FDragging or FPanning then
+    Exit;
+  if FPanning then
+    Exit;
+  Z := FFractal.Zoom * 2;
+  if Z < 1.1 then
+    FFractal.MoveTo(-0.5, 0, 1)
+  else
+    FFractal.MoveTo(FFractal.X, FFractal.Y, Z);
+end;
+
+procedure TFractalForm.OutButtonClick(Sender: TObject);
+var
+  Z: Double;
+begin
+  Timer.Enabled := False;
+  Timer.Enabled := True;
+  SceneControl.SetFocus;
+  if FFractal.IsTour or FDragging or FPanning then
+    Exit;
+  Z := FFractal.Zoom / 2;
+  if Z < 1.1 then
+    FFractal.MoveTo(-0.5, 0, 1)
+  else
+    FFractal.MoveTo(FFractal.X, FFractal.Y, Z);
+end;
+
 procedure TFractalForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   FController.Free;
 end;
 
+procedure TFractalForm.ApplicationProperties1ShowHint(var HintStr: string;
+  var CanShow: Boolean; var HintInfo: THintInfo);
+begin
+  Caption := HintStr;
+end;
+
 procedure TFractalForm.SceneControlMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  if Button = mbLeft then
+  if FFractal.IsTour or FDragging or FPanning then
+    Exit;
+  if (ssCtrl in Shift) or PanButton.Down then
+  begin
+    SceneControl.Cursor := crDefault;
+    FPanning := True;
+    FPan.X := X;
+    FPan.Y := Y;
+  end
+  else if Button = mbLeft then
   begin
     FDragging := True;
+    SceneControl.Cursor := crCross;
     FDrag.Left := X;
     FDrag.Top := Y;
     FDrag.Width := 0;
@@ -76,7 +189,19 @@ end;
 procedure TFractalForm.SceneControlMouseMove(Sender: TObject;
   Shift: TShiftState; X, Y: Integer);
 begin
-  if FDragging then
+  if FPanning or (ssCtrl in Shift) or PanButton.Down then
+    SceneControl.Cursor := crSizeAll
+  else if FDragging then
+    SceneControl.Cursor := crCross
+  else
+    SceneControl.Cursor := crDefault;
+  if FPanning then
+  begin
+    FFractal.Pan(FPan.X - X, FPan.Y - Y);
+    FPan.X := X;
+    FPan.Y := Y;
+  end
+  else if FDragging then
   begin
     FDrag.Right := X;
     FDrag.Bottom := Y;
@@ -89,7 +214,15 @@ procedure TFractalForm.SceneControlMouseUp(Sender: TObject;
 var
   A, B, FX, FY, FZ: Double;
 begin
-  if Button = mbLeft then
+  if (ssCtrl in Shift) or PanButton.Down then
+    SceneControl.Cursor := crSizeAll
+  else
+    SceneControl.Cursor := crDefault;
+  if FPanning then
+  begin
+    FPanning := False;
+  end
+  else if Button = mbLeft then
   begin
     FDragging := False;
     A := Abs(FDrag.Width);
