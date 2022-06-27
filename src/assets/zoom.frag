@@ -1,5 +1,3 @@
-#version 410
- 
 // Mandelbrot Zoom
 
 #define itter 256
@@ -30,7 +28,7 @@ void main() {
 				select = 0.5;
 		}
 	// locate the position 0, 0
-	dvec2 c = (gl_FragCoord.xy -vec2(0.5) * resolution.xy) / vec2(resolution.x);
+	vec2 c = (gl_FragCoord.xy -vec2(0.5) * resolution.xy) / vec2(resolution.x);
 	// apply a zoom facor
 	c.x = c.x * 3.0 / zoom;
 	c.y = c.y * -3.0 / -zoom;
@@ -41,7 +39,7 @@ void main() {
 	// center c based on some input value
 	c += center;
 	// calculate the mandelbrot set
-	dvec2 z = dvec2(0.0);
+	vec2 z = vec2(0.0);
 	double zxx = z.x * z.x;
 	double zyy = z.y * z.y;
 	float count = 0.0;

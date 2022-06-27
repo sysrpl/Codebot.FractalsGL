@@ -67,18 +67,11 @@ begin
   FZoomProg := TShaderProgram.CreateFromFile('zoom');
   FZoomProg.Name := 'zoom';
   if not FZoomProg.Valid then
-  begin
-    Context.SetClearColor(1, 0, 0, 0);
-    WriteLn('zoom error: ' + FZoomProg.ErrorString);
-    Exit;
-  end;
+    raise EOpenGLError.Create(FZoomProg.ErrorString);
   FTourProg := TShaderProgram.CreateFromFile('tour');
   FTourProg.Name := 'tour';
   if not FTourProg.Valid then
-  begin
-    WriteLn('tour error: ' + FTourProg.ErrorString);
-    Exit;
-  end;
+    raise EOpenGLError.Create(FTourProg.ErrorString);
   FCurrentProg := FZoomProg;
   FVerts := TFlatVertexBuffer.Create(3);
   FVerts.Name := 'triangle';

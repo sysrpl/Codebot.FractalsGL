@@ -7,7 +7,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons, ExtCtrls,
-  StdCtrls, OpenGLContext, FractalScene, Codebot.Graphics.Types,
+  StdCtrls, OpenGLContext, FractalScene, Codebot.Graphics, Codebot.Graphics.Types,
   Codebot.Render.Scenes.Controller;
 
 { TFractalForm }
@@ -19,9 +19,9 @@ type
     GoButton: TSpeedButton;
     InButton: TSpeedButton;
     OutButton: TSpeedButton;
+    PanButton: TSpeedButton;
     SceneControl: TOpenGLControl;
     HelpShape: TShape;
-    PanButton: TSpeedButton;
     Timer: TTimer;
     XEdit: TEdit;
     XLabel: TLabel;
@@ -63,6 +63,23 @@ implementation
 
 { TFractalForm }
 
+procedure VertAlign(Control: TControl; Siblings: array of TControl);
+var
+  H, T, Y: Integer;
+  S: TControl;
+begin
+  H := Control.Height;
+  T := Control.Top;
+  for S in Siblings do
+  begin
+    Y := S.Height;
+    if Y = H then
+      S.Top := T
+    else
+      S.Top := T - (Y - H) div 2;
+  end;
+end;
+
 procedure TFractalForm.FormCreate(Sender: TObject);
 begin
   ClientWidth := SceneControl.Width + SceneControl.Left * 2;
@@ -70,6 +87,11 @@ begin
   SceneControl.Anchors := [akLeft, akTop, akRight, akBottom];
   HelpShape.Anchors := [akLeft, akRight, akBottom];
   HelpLabel.Anchors := [akLeft, akRight, akBottom];
+  GoButton.Glyph.Colorize(clWindowText);
+  LasooButton.Glyph.Colorize(clWindowText);
+  InButton.Glyph.Colorize(clWindowText);
+  OutButton.Glyph.Colorize(clWindowText);
+  PanButton.Glyph.Colorize(clWindowText);
   FController := TSceneController.Create(Self);
   FController.OpenScene(SceneControl, TFractalScene);
   FFractal := FController.Scene as TFractalScene;
@@ -80,6 +102,9 @@ end;
 procedure TFractalForm.FormShow(Sender: TObject);
 begin
   OnShow := nil;
+  VertAlign(LasooButton, [XLabel, XEdit, YLabel, YEdit, ZoomLabel, ZoomEdit]);
+  VertAlign(HelpShape, [HelpLabel]);
+  HelpLabel.Font.Color := clHighlightText;
   SceneControl.SetFocus;
 end;
 

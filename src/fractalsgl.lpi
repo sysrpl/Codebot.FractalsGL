@@ -45,7 +45,6 @@
           <Linking>
             <Debugging>
               <DebugInfoType Value="dsDwarf2Set"/>
-              <UseHeaptrc Value="True"/>
               <TrashVariables Value="True"/>
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
@@ -109,6 +108,7 @@
       <Unit0>
         <Filename Value="fractalsgl.lpr"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="FractalsGL"/>
       </Unit0>
       <Unit1>
         <Filename Value="fractalscene.pas"/>
