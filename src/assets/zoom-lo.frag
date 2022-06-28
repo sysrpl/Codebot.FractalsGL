@@ -1,5 +1,3 @@
-// Mandelbrot Zoom
-
 #define itter 256
 #define PI2 6.283185
 
@@ -11,12 +9,12 @@ uniform float zoom;
 uniform bool drag;
 uniform vec4 rect;
 
-bool between(double a, double b) {
+bool between(float a, float b) {
 	return a >= b && a < b + 1.0;
 }
 
 void main() {
-	double select = 0.0;
+	float select = 0.0;
 	vec2 coord = gl_FragCoord.xy;
 	coord.y = resolution.y - coord.y;
 	if (drag)
@@ -35,13 +33,13 @@ void main() {
 	// rotate c based on angle
 	float cosa = cos(0.2 * angle);
 	float sina = sin(0.2 * angle);
-	c = dvec2(c.x * cosa - c.y * sina, c.x * sina + c.y  * cosa);
+	c = vec2(c.x * cosa - c.y * sina, c.x * sina + c.y  * cosa);
 	// center c based on some input value
 	c += center;
 	// calculate the mandelbrot set
 	vec2 z = vec2(0.0);
-	double zxx = z.x * z.x;
-	double zyy = z.y * z.y;
+	float zxx = z.x * z.x;
+	float zyy = z.y * z.y;
 	float count = 0.0;
 	for (int i = 0; i < itter; i++) {
 		if (zxx + zyy > 4.0)
@@ -64,7 +62,7 @@ void main() {
 		b = cos(PI2 * count + 2.0);
 	}
 	if (select > 0.0) {
-		double blink = mix(0.8, 1.0, sin(time * 3.0));
+		float blink = mix(0.8, 1.0, sin(time * 3.0));
 		select = select * blink;
 	}
 	gl_FragColor = mix(vec4(r, g, b, 1.0), vec4(1.0), float(select));

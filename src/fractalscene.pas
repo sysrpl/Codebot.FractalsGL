@@ -10,7 +10,8 @@ uses
   Codebot.Render.Contexts,
   Codebot.Render.Scenes,
   Codebot.Render.Buffers,
-  Codebot.Render.Shaders;
+  Codebot.Render.Shaders,
+  SysUtils, Classes;
 
 { TFractalScene }
 
@@ -27,6 +28,7 @@ type
     FMoveStart: Double;
     FMoveEnd: Double;
     FX, FY, FZ, FSX, FSY, FSZ, FDX, FDY, FDZ: Double;
+    FOnModeChange: TNotifyEvent;
     function GetIsTour: Boolean;
     procedure SetZoom(Value: Double);
   public
@@ -42,6 +44,7 @@ type
     property X: Double read FX write FX;
     property Y: Double read FY write FY;
     property IsTour: Boolean read GetIsTour;
+    property OnModeChange: TNotifyEvent read FOnModeChange write FOnModeChange;
   end;
 
 implementation
@@ -61,17 +64,37 @@ begin
 end;
 
 procedure TFractalScene.Initialize;
+var
+  S: string;
 begin
   Context.SetClearColor(1, 0, 0, 0);
   FZ := 1;
-  FZoomProg := TShaderProgram.CreateFromFile('zoom');
+  FZoomProg := TShaderProgram.CreateFromFile('zoom-hi');
   FZoomProg.Name := 'zoom';
   if not FZoomProg.Valid then
-    raise EOpenGLError.Create(FZoomProg.ErrorString);
+  begin
+    FZoomProg.Free;
+    FZoomProg := TShaderProgram.CreateFromFile('zoom-lo');
+    FZoomProg.Name := 'zoom';
+    if not FZoomProg.Valid then
+    begin
+      S := FZoomProg.ErrorString;
+      FZoomProg.Free;
+      FZoomProg := nil;
+      raise EOpenGLError.Create(S);
+    end;
+  end;
   FTourProg := TShaderProgram.CreateFromFile('tour');
   FTourProg.Name := 'tour';
   if not FTourProg.Valid then
-    raise EOpenGLError.Create(FTourProg.ErrorString);
+  begin
+    FZoomProg.Free;
+    FZoomProg := nil;
+    S := FTourProg.ErrorString;
+    FTourProg.Free;
+    FTourProg := nil;
+    raise EOpenGLError.Create(S);
+  end;
   FCurrentProg := FZoomProg;
   FVerts := TFlatVertexBuffer.Create(3);
   FVerts.Name := 'triangle';
@@ -83,13 +106,22 @@ begin
 end;
 
 procedure TFractalScene.Logic;
+var
+  P: TShaderProgram;
 begin
   if FCurrentProg = nil then
     Exit;
+  P := FCurrentProg;
   if IsKeyDown(VK_Q) then
-    FCurrentProg := FZoomProg
+    P := FZoomProg
   else if IsKeyDown(VK_W) then
-    FCurrentProg := FTourProg;
+    P := FTourProg;
+  if P <> FCurrentProg then
+  begin
+    FCurrentProg := P;
+    if Assigned(FOnModeChange) then
+      FOnModeChange(Self);
+  end;
 end;
 
 const

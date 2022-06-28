@@ -3,24 +3,26 @@
   <ProjectSession>
     <Version Value="12"/>
     <BuildModes Active="Debug"/>
-    <Units Count="20">
+    <Units Count="32">
       <Unit0>
         <Filename Value="fractalsgl.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FractalsGL"/>
-        <CursorPos X="38" Y="7"/>
-        <UsageCount Value="46"/>
+        <CursorPos Y="20"/>
+        <UsageCount Value="64"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="fractalscene.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FractalScene"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos Y="16"/>
-        <UsageCount Value="46"/>
+        <TopLine Value="46"/>
+        <CursorPos X="38" Y="60"/>
+        <UsageCount Value="64"/>
         <Bookmarks Count="1">
-          <Item0 Y="71" ID="1"/>
+          <Item0 Y="81" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit1>
@@ -31,11 +33,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="49"/>
-        <CursorPos X="13" Y="63"/>
-        <UsageCount Value="46"/>
+        <TopLine Value="124"/>
+        <CursorPos X="24" Y="124"/>
+        <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -46,7 +47,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="51" Y="17"/>
-        <UsageCount Value="18"/>
+        <UsageCount Value="16"/>
       </Unit3>
       <Unit4>
         <Filename Value="../../../lazarus/components/sparta/dockedformeditor/source/sparta_reg_dockedformeditor.pas"/>
@@ -54,7 +55,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="42"/>
         <CursorPos X="73" Y="58"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="6"/>
       </Unit4>
       <Unit5>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_controls/codebot.design.surfacebitmapeditor.pas"/>
@@ -62,7 +63,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="24" Y="25"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="6"/>
       </Unit5>
       <Unit6>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_controls/codebot.design.registration.pas"/>
@@ -70,7 +71,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="28"/>
         <CursorPos X="32" Y="40"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="13"/>
       </Unit6>
       <Unit7>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_controls/codebot.design.editors.pas"/>
@@ -78,13 +79,13 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="65"/>
         <CursorPos X="8" Y="80"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="13"/>
       </Unit7>
       <Unit8>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
         <UnitName Value="Codebot.Render.Scenes.Controller"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="9"/>
       </Unit8>
       <Unit9>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.pas"/>
@@ -92,14 +93,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
         <CursorPos X="3" Y="282"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="14"/>
       </Unit9>
       <Unit10>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.contexts.pas"/>
         <UnitName Value="Codebot.Render.Contexts"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15" Y="18"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="14"/>
       </Unit10>
       <Unit11>
         <Filename Value="../../../../../FPC/lazarus/lcl/graphics.pp"/>
@@ -107,7 +108,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1293"/>
         <CursorPos X="14" Y="1309"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="12"/>
       </Unit11>
       <Unit12>
         <Filename Value="../../../../../FPC/lazarus/components/lazutils/graphtype.pp"/>
@@ -115,20 +116,20 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="209"/>
         <CursorPos X="27" Y="221"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="12"/>
       </Unit12>
       <Unit13>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.graphics.types.pas"/>
         <UnitName Value="Codebot.Graphics.Types"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="12"/>
       </Unit13>
       <Unit14>
         <Filename Value="main.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="175"/>
         <CursorPos X="30" Y="184"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit14>
       <Unit15>
@@ -137,7 +138,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1547"/>
         <CursorPos X="16" Y="1553"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="12"/>
       </Unit15>
       <Unit16>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.gles.pas"/>
@@ -145,7 +146,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="469"/>
         <CursorPos X="46" Y="498"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="9"/>
         <Bookmarks Count="1">
           <Item0 Y="495" ID="2"/>
         </Bookmarks>
@@ -153,7 +154,7 @@
       <Unit17>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.inc"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="9"/>
       </Unit17>
       <Unit18>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.buffers.pas"/>
@@ -161,7 +162,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="100"/>
         <CursorPos X="23" Y="13"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="9"/>
       </Unit18>
       <Unit19>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.textures.pas"/>
@@ -169,125 +170,223 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="82"/>
         <CursorPos X="3" Y="107"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="9"/>
       </Unit19>
+      <Unit20>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot_render/codebot.gles.pas"/>
+        <UnitName Value="Codebot.GLES"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="6"/>
+        <UsageCount Value="19"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot/codebot.system.pas"/>
+        <UnitName Value="Codebot.System"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="19"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.pas"/>
+        <UnitName Value="Codebot.Render.Scenes"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="215"/>
+        <CursorPos X="26" Y="230"/>
+        <UsageCount Value="19"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot_render/codebot.render.contexts.pas"/>
+        <UnitName Value="Codebot.Render.Contexts"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="19"/>
+        <Loaded Value="True"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="../../../../lazarus/lcl/controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="203"/>
+        <CursorPos X="13" Y="213"/>
+        <UsageCount Value="16"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
+        <UnitName Value="Codebot.Render.Scenes.Controller"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="127"/>
+        <CursorPos X="3" Y="132"/>
+        <UsageCount Value="15"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot/codebot.graphics.pas"/>
+        <UnitName Value="Codebot.Graphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1555"/>
+        <CursorPos X="31" Y="1566"/>
+        <UsageCount Value="15"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot/codebot.graphics.types.pas"/>
+        <UnitName Value="Codebot.Graphics.Types"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1939"/>
+        <CursorPos X="8" Y="1944"/>
+        <UsageCount Value="15"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="../../../../lazarus/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1878"/>
+        <CursorPos X="20" Y="1895"/>
+        <UsageCount Value="15"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot/codebot.text.pas"/>
+        <UnitName Value="Codebot.Text"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="196"/>
+        <CursorPos Y="214"/>
+        <UsageCount Value="15"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="../../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <UnitName Value="Codebot.Render.Shaders"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="52"/>
+        <CursorPos X="3" Y="63"/>
+        <UsageCount Value="10"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="../../../../lazarus/lcl/include/customform.inc"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="3153"/>
+        <CursorPos Y="3170"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit31>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="96" TopLine="85"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="159" Column="44" TopLine="143"/>
       </Position1>
       <Position2>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="111" TopLine="85"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="101" Column="52" TopLine="89"/>
       </Position2>
       <Position3>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="100" Column="26" TopLine="85"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="117" Column="30" TopLine="85"/>
       </Position3>
       <Position4>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="111" TopLine="85"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="100" TopLine="66"/>
       </Position4>
       <Position5>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="96" TopLine="85"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="11" Column="16"/>
       </Position5>
       <Position6>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="113" Column="16" TopLine="91"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="11" Column="16"/>
       </Position6>
       <Position7>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="36" Column="15" TopLine="8"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="130" Column="17" TopLine="54"/>
       </Position7>
       <Position8>
         <Filename Value="main.pas"/>
-        <Caret Line="85" TopLine="70"/>
+        <Caret Line="94" Column="26" TopLine="75"/>
       </Position8>
       <Position9>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="70" TopLine="54"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="75" Column="15" TopLine="58"/>
       </Position9>
       <Position10>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="77" TopLine="54"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="20" Column="35"/>
       </Position10>
       <Position11>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="78" TopLine="54"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="136" Column="27" TopLine="118"/>
       </Position11>
       <Position12>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="79" TopLine="54"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="132" TopLine="118"/>
       </Position12>
       <Position13>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="84" TopLine="58"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="133" TopLine="118"/>
       </Position13>
       <Position14>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="73" Column="4" TopLine="54"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="134" TopLine="118"/>
       </Position14>
       <Position15>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="16"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="135" TopLine="118"/>
       </Position15>
       <Position16>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="34" Column="20" TopLine="22"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="136" TopLine="118"/>
       </Position16>
       <Position17>
         <Filename Value="fractalscene.pas"/>
-        <Caret Line="75" TopLine="64"/>
+        <Caret Line="63" TopLine="61"/>
       </Position17>
       <Position18>
-        <Filename Value="main.pas"/>
+        <Filename Value="fractalsgl.lpr"/>
+        <Caret Line="25" Column="82"/>
       </Position18>
       <Position19>
-        <Filename Value="main.pas"/>
-        <Caret Line="119" Column="9" TopLine="93"/>
+        <Filename Value="fractalsgl.lpr"/>
+        <Caret Line="9" Column="19"/>
       </Position19>
       <Position20>
-        <Filename Value="main.pas"/>
-        <Caret Line="132" Column="9" TopLine="106"/>
+        <Filename Value="fractalsgl.lpr"/>
+        <Caret Line="26" Column="31"/>
       </Position20>
       <Position21>
         <Filename Value="main.pas"/>
-        <Caret Line="134" Column="9" TopLine="108"/>
+        <Caret Line="132" TopLine="118"/>
       </Position21>
       <Position22>
-        <Filename Value="main.pas"/>
-        <Caret Line="154" Column="9" TopLine="128"/>
+        <Filename Value="fractalscene.pas"/>
+        <Caret Line="63" TopLine="56"/>
       </Position22>
       <Position23>
         <Filename Value="main.pas"/>
-        <Caret Line="156" Column="9" TopLine="130"/>
+        <Caret Line="146" TopLine="118"/>
       </Position23>
       <Position24>
         <Filename Value="main.pas"/>
-        <Caret Line="172" Column="9" TopLine="146"/>
+        <Caret Line="138" Column="35" TopLine="118"/>
       </Position24>
       <Position25>
         <Filename Value="main.pas"/>
-        <Caret Line="141" Column="14" TopLine="97"/>
+        <Caret Line="139" Column="9" TopLine="118"/>
       </Position25>
       <Position26>
-        <Filename Value="main.pas"/>
-        <Caret Line="50" Column="5" TopLine="34"/>
+        <Filename Value="fractalscene.pas"/>
+        <Caret Line="84" TopLine="56"/>
       </Position26>
       <Position27>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="35" Column="19" TopLine="21"/>
+        <Filename Value="../../../../lazarus/lcl/include/customform.inc"/>
+        <Caret Line="925" TopLine="907"/>
       </Position27>
       <Position28>
-        <Filename Value="fractalscene.pas"/>
-        <Caret Line="79" Column="59" TopLine="59"/>
+        <Filename Value="fractalsgl.lpr"/>
+        <Caret Line="20"/>
       </Position28>
       <Position29>
         <Filename Value="fractalscene.pas"/>
-        <Caret Line="72" Column="82" TopLine="59"/>
+        <Caret Line="63" TopLine="56"/>
       </Position29>
+      <Position30>
+        <Filename Value="main.pas"/>
+        <Caret Line="124" Column="24" TopLine="124"/>
+      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

@@ -4,8 +4,9 @@ program FractalsGL;
 
 uses
   Codebot.System,
+  Codebot.Render.Contexts,
   Interfaces,
-  Forms, LazOpenGLContext, Main, FractalScene;
+  Forms, Dialogs, LazOpenGLContext, Main, FractalScene;
 
 {$R *.res}
 
@@ -13,6 +14,9 @@ begin
   RequireDerivedFormResource := True;
   Application.Scaled := True;
   Application.Initialize;
-  Application.CreateForm(TFractalForm, FractalForm);
-  Application.Run;
+  if CheckOpenGL then
+  begin
+    Application.CreateForm(TFractalForm, FractalForm);
+    Application.Run;
+  end;
 end.

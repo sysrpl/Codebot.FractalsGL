@@ -8,7 +8,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons, ExtCtrls,
   StdCtrls, OpenGLContext, FractalScene, Codebot.Graphics, Codebot.Graphics.Types,
-  Codebot.Render.Scenes.Controller;
+  Codebot.Render.Scenes.Controller, Codebot.GLES, Types;
 
 { TFractalForm }
 
@@ -29,6 +29,7 @@ type
     YLabel: TLabel;
     ZoomEdit: TEdit;
     ZoomLabel: TLabel;
+    HelpIcon: TImage;
     procedure ApplicationProperties1ShowHint(var HintStr: string;
       var CanShow: Boolean; var HintInfo: THintInfo);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -45,6 +46,8 @@ type
       Shift: TShiftState; X, Y: Integer);
     procedure TimerTimer(Sender: TObject);
     procedure YEditKeyPress(Sender: TObject; var Key: char);
+    procedure SceneControlMouseWheel(Sender: TObject; Shift: TShiftState;
+      WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
   private
     FController: TSceneController;
     FFractal: TFractalScene;
@@ -52,14 +55,50 @@ type
     FDrag: TRectI;
     FPanning: Boolean;
     FPan: TPointI;
+    procedure FractalModeChange(Sender: TObject);
   end;
 
 var
   FractalForm: TFractalForm;
 
+function CheckOpenGL: Boolean;
+
 implementation
 
 {$R *.lfm}
+
+procedure Colorize(Bitmap: TBitmap; Color: TColor);
+var
+  W, H, X, Y: Integer;
+  Source, Dest: PByte;
+  A: Single;
+begin
+  if Bitmap.PixelFormat <> pf32bit then
+    Exit;
+  W := Bitmap.Width;
+  H := Bitmap.Height;
+  if (W < 1) or (H < 1) then
+    Exit;
+  Color := ColorToRGB(Color);
+  Source := @Color;
+  Bitmap.BeginUpdate;
+  for Y := 0 to H - 1 do
+  begin
+    Dest := Bitmap.RawImage.GetLineStart(Y);
+    for X := 0 to W - 1 do
+    begin
+      A := Dest[3] / 255;
+      Dest^ := Trunc(Source[2] * A);
+      Inc(Dest);
+      Dest^ := Trunc(Source[1] * A);
+      Inc(Dest);
+      Dest^ := Trunc(Source[0] * A);
+      Inc(Dest);
+      Inc(Dest);
+    end;
+  end;
+  Bitmap.EndUpdate;
+end;
 
 { TFractalForm }
 
@@ -92,18 +131,27 @@ begin
   InButton.Glyph.Colorize(clWindowText);
   OutButton.Glyph.Colorize(clWindowText);
   PanButton.Glyph.Colorize(clWindowText);
+  HelpIcon.Picture.Bitmap.Colorize(clHighlightText);
   FController := TSceneController.Create(Self);
-  FController.OpenScene(SceneControl, TFractalScene);
+  try
+    FController.OpenScene(SceneControl, TFractalScene);
+  except
+    MessageDlg('An error occurred while compiling an OpenGL shader program.',
+      mtError, [mbOk], 0);
+    Halt;
+  end;
   FFractal := FController.Scene as TFractalScene;
   FFractal.Zoom := 1;
   FFractal.X := -0.5;
+  FFractal.OnModeChange  := FractalModeChange;
+  Timer.Enabled := True;
 end;
 
 procedure TFractalForm.FormShow(Sender: TObject);
 begin
   OnShow := nil;
   VertAlign(LasooButton, [XLabel, XEdit, YLabel, YEdit, ZoomLabel, ZoomEdit]);
-  VertAlign(HelpShape, [HelpLabel]);
+  VertAlign(HelpShape, [HelpIcon, HelpLabel]);
   HelpLabel.Font.Color := clHighlightText;
   SceneControl.SetFocus;
 end;
@@ -141,6 +189,24 @@ procedure TFractalForm.YEditKeyPress(Sender: TObject; var Key: char);
 begin
   if Key = ^M then
     GoButtonClick(GoButton);
+end;
+
+procedure TFractalForm.SceneControlMouseWheel(Sender: TObject;
+  Shift: TShiftState; WheelDelta: Integer; MousePos: TPoint;
+  var Handled: Boolean);
+begin
+  if WheelDelta > 0 then
+    InButton.Click
+  else if WheelDelta < 0 then
+    OutButton.Click;
+end;
+
+procedure TFractalForm.FractalModeChange(Sender: TObject);
+begin
+  if FFractal.IsTour then
+    Caption := 'Mandelbrot Set - Tour'
+  else
+    Caption := 'Mandelbrot Set - Navigate';
 end;
 
 procedure TFractalForm.InButtonClick(Sender: TObject);
@@ -281,6 +347,16 @@ begin
     else
       FFractal.MoveTo(FFractal.X, FFractal.Y, FZ);
   end;
+end;
+
+function CheckOpenGL: Boolean;
+const
+  Error = 'This program requires OpenGL ES 2.0 to operate. Your computer either ' +
+    'does not have the hardware to support GLES2 or it is missing supporting libaries.';
+begin
+  Result := LoadOpenGLES;
+  if not Result then
+    MessageDlg(Error, mtError, [mbOK], 0);
 end;
 
 end.
