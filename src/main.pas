@@ -23,6 +23,7 @@ type
     SceneControl: TOpenGLControl;
     HelpShape: TShape;
     Timer: TTimer;
+    Timer1: TTimer;
     XEdit: TEdit;
     XLabel: TLabel;
     YEdit: TEdit;
@@ -44,6 +45,7 @@ type
       Y: Integer);
     procedure SceneControlMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure Timer1Timer(Sender: TObject);
     procedure TimerTimer(Sender: TObject);
     procedure YEditKeyPress(Sender: TObject; var Key: char);
     procedure SceneControlMouseWheel(Sender: TObject; Shift: TShiftState;
@@ -121,11 +123,15 @@ end;
 
 procedure TFractalForm.FormCreate(Sender: TObject);
 begin
+  SceneControl.MakeCurrent;
+  if not CheckOpenGL then
+    Halt;
   ClientWidth := SceneControl.Width + SceneControl.Left * 2;
   ClientHeight := HelpShape.Top + HelpShape.Height + 8;
   SceneControl.Anchors := [akLeft, akTop, akRight, akBottom];
   HelpShape.Anchors := [akLeft, akRight, akBottom];
   HelpLabel.Anchors := [akLeft, akRight, akBottom];
+  HelpIcon.Anchors := [akLeft, akBottom];
   GoButton.Glyph.Colorize(clWindowText);
   LasooButton.Glyph.Colorize(clWindowText);
   InButton.Glyph.Colorize(clWindowText);
@@ -347,6 +353,10 @@ begin
     else
       FFractal.MoveTo(FFractal.X, FFractal.Y, FZ);
   end;
+end;
+
+procedure TFractalForm.Timer1Timer(Sender: TObject);
+begin
 end;
 
 function CheckOpenGL: Boolean;

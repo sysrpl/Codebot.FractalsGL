@@ -14,9 +14,6 @@ begin
   RequireDerivedFormResource := True;
   Application.Scaled := True;
   Application.Initialize;
-  if CheckOpenGL then
-  begin
-    Application.CreateForm(TFractalForm, FractalForm);
-    Application.Run;
-  end;
+  Application.CreateForm(TFractalForm, FractalForm);
+  Application.Run;
 end.
