@@ -3,13 +3,13 @@
   <ProjectSession>
     <Version Value="12"/>
     <BuildModes Active="Debug"/>
-    <Units Count="34">
+    <Units Count="36">
       <Unit0>
         <Filename Value="fractalsgl.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FractalsGL"/>
         <CursorPos Y="14"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -17,11 +17,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FractalScene"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="46"/>
-        <CursorPos X="38" Y="60"/>
-        <UsageCount Value="66"/>
+        <TopLine Value="31"/>
+        <CursorPos X="5" Y="52"/>
+        <UsageCount Value="67"/>
         <Bookmarks Count="1">
-          <Item0 Y="81" ID="1"/>
+          <Item0 Y="83" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit1>
@@ -32,10 +32,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="168"/>
-        <CursorPos Y="189"/>
-        <UsageCount Value="66"/>
+        <TopLine Value="37"/>
+        <CursorPos X="85" Y="50"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -84,9 +85,9 @@
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
         <UnitName Value="Codebot.Render.Scenes.Controller"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="53"/>
-        <CursorPos X="3" Y="55"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="67"/>
+        <CursorPos X="3" Y="17"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -100,9 +101,11 @@
       <Unit10>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.contexts.pas"/>
         <UnitName Value="Codebot.Render.Contexts"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="15" Y="18"/>
-        <UsageCount Value="14"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="244"/>
+        <CursorPos X="10" Y="261"/>
+        <UsageCount Value="15"/>
+        <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="../../../../../FPC/lazarus/lcl/graphics.pp"/>
@@ -148,7 +151,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="579"/>
         <CursorPos Y="593"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Bookmarks Count="1">
           <Item0 Y="495" ID="2"/>
         </Bookmarks>
@@ -277,132 +280,150 @@
       <Unit33>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
         <UnitName Value="Codebot.Animation"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="1399"/>
-        <CursorPos X="17" Y="1408"/>
-        <UsageCount Value="10"/>
+        <CursorPos X="9" Y="1412"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit33>
+      <Unit34>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <UnitName Value="Codebot.Render.Shaders"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="10" Y="10"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.system.pas"/>
+        <UnitName Value="Codebot.System"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="3013"/>
+        <CursorPos X="31" Y="3030"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit35>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
-        <Caret Line="42" Column="25" TopLine="25"/>
+        <Caret Line="40" Column="24" TopLine="19"/>
       </Position1>
       <Position2>
-        <Filename Value="main.pas"/>
-        <Caret Line="124" Column="27" TopLine="111"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
+        <Caret Line="55" Column="3" TopLine="53"/>
       </Position2>
       <Position3>
-        <Filename Value="main.pas"/>
-        <Caret Line="6" Column="48"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
+        <Caret Line="339" Column="19" TopLine="314"/>
       </Position3>
       <Position4>
-        <Filename Value="main.pas"/>
-        <Caret Line="25" Column="18"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
+        <Caret Line="1438" Column="3" TopLine="1436"/>
       </Position4>
       <Position5>
-        <Filename Value="main.pas"/>
-        <Caret Line="47" Column="25" TopLine="19"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
+        <Caret Line="1356" Column="6" TopLine="1337"/>
       </Position5>
       <Position6>
-        <Filename Value="main.pas"/>
-        <Caret Line="151" Column="8" TopLine="123"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
+        <Caret Line="1345" Column="20" TopLine="1334"/>
       </Position6>
       <Position7>
         <Filename Value="main.pas"/>
-        <Caret Line="167" Column="8" TopLine="139"/>
+        <Caret Line="189" TopLine="37"/>
       </Position7>
       <Position8>
-        <Filename Value="main.pas"/>
-        <Caret Line="168" Column="8" TopLine="140"/>
+        <Filename Value="fractalscene.pas"/>
+        <Caret Line="19" Column="3" TopLine="62"/>
       </Position8>
       <Position9>
-        <Filename Value="main.pas"/>
-        <Caret Line="187" Column="18" TopLine="169"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="75" Column="17" TopLine="58"/>
       </Position9>
       <Position10>
-        <Filename Value="main.pas"/>
-        <Caret Line="151" Column="3" TopLine="127"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="217" Column="49" TopLine="217"/>
       </Position10>
       <Position11>
-        <Filename Value="main.pas"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="77" Column="17" TopLine="60"/>
       </Position11>
       <Position12>
-        <Filename Value="main.pas"/>
-        <Caret Line="151" Column="16" TopLine="123"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="226" Column="3" TopLine="222"/>
       </Position12>
       <Position13>
-        <Filename Value="main.pas"/>
-        <Caret Line="167" Column="16" TopLine="139"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.contexts.pas"/>
+        <Caret Line="166" Column="9" TopLine="146"/>
       </Position13>
       <Position14>
-        <Filename Value="main.pas"/>
-        <Caret Line="168" Column="16" TopLine="140"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.contexts.pas"/>
+        <Caret Line="610" Column="18" TopLine="607"/>
       </Position14>
       <Position15>
-        <Filename Value="main.pas"/>
-        <Caret Line="222" Column="16" TopLine="194"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.system.pas"/>
+        <Caret Line="664" TopLine="632"/>
       </Position15>
       <Position16>
-        <Filename Value="main.pas"/>
-        <Caret Line="223" Column="16" TopLine="195"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.system.pas"/>
+        <Caret Line="3030" Column="11" TopLine="3012"/>
       </Position16>
       <Position17>
-        <Filename Value="main.pas"/>
-        <Caret Line="240" Column="16" TopLine="212"/>
+        <Filename Value="fractalscene.pas"/>
+        <Caret Line="19" Column="3" TopLine="62"/>
       </Position17>
       <Position18>
-        <Filename Value="main.pas"/>
-        <Caret Line="241" Column="16" TopLine="213"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="75" Column="17" TopLine="58"/>
       </Position18>
       <Position19>
-        <Filename Value="main.pas"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="219" Column="3" TopLine="217"/>
       </Position19>
       <Position20>
-        <Filename Value="main.pas"/>
-        <Caret Line="191" TopLine="178"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.contexts.pas"/>
+        <Caret Line="613" Column="44" TopLine="604"/>
       </Position20>
       <Position21>
-        <Filename Value="main.pas"/>
-        <Caret Line="364" TopLine="343"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.contexts.pas"/>
+        <Caret Line="163" Column="39" TopLine="144"/>
       </Position21>
       <Position22>
-        <Filename Value="main.pas"/>
-        <Caret Line="362" Column="3" TopLine="343"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="77" Column="23" TopLine="64"/>
       </Position22>
       <Position23>
-        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
-        <Caret Line="30" Column="25" TopLine="16"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="220" TopLine="205"/>
       </Position23>
       <Position24>
-        <Filename Value="main.pas"/>
-        <Caret Line="191" TopLine="125"/>
+        <Filename Value="fractalscene.pas"/>
+        <Caret Line="71" Column="49" TopLine="62"/>
       </Position24>
       <Position25>
-        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
-        <Caret Line="40" Column="24" TopLine="19"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="77" Column="13" TopLine="58"/>
       </Position25>
       <Position26>
-        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.scenes.controller.pas"/>
-        <Caret Line="55" Column="3" TopLine="53"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="256" TopLine="223"/>
       </Position26>
       <Position27>
-        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
-        <Caret Line="339" Column="19" TopLine="314"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="235" Column="24" TopLine="216"/>
       </Position27>
       <Position28>
-        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
-        <Caret Line="1438" Column="3" TopLine="1436"/>
+        <Filename Value="fractalscene.pas"/>
+        <Caret Line="75" Column="33" TopLine="55"/>
       </Position28>
       <Position29>
-        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
-        <Caret Line="1356" Column="6" TopLine="1337"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.system.pas"/>
+        <Caret Line="3030" Column="31" TopLine="3013"/>
       </Position29>
       <Position30>
-        <Filename Value="../../../Libraries/cross.codebot/source/codebot/codebot.animation.pas"/>
-        <Caret Line="1345" Column="20" TopLine="1334"/>
+        <Filename Value="../../../Libraries/cross.codebot/source/codebot_render/codebot.render.shaders.pas"/>
+        <Caret Line="222" Column="6" TopLine="205"/>
       </Position30>
     </JumpHistory>
     <RunParams>

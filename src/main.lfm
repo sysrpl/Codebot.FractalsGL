@@ -47,9 +47,9 @@ object FractalForm: TFractalForm
   end
   object ZoomLabel: TLabel
     Left = 290
-    Height = 19
+    Height = 17
     Top = 20
-    Width = 39
+    Width = 41
     Caption = 'Zoom:'
     Color = clDefault
     Font.Height = -14
@@ -57,8 +57,8 @@ object FractalForm: TFractalForm
     ParentFont = False
   end
   object ZoomEdit: TEdit
-    Left = 350
-    Height = 27
+    Left = 342
+    Height = 25
     Top = 14
     Width = 120
     Font.Height = -14
@@ -68,8 +68,8 @@ object FractalForm: TFractalForm
     Text = '1'
   end
   object XEdit: TEdit
-    Left = 40
-    Height = 27
+    Left = 32
+    Height = 25
     Top = 14
     Width = 100
     Font.Height = -14
@@ -80,10 +80,10 @@ object FractalForm: TFractalForm
   end
   object XLabel: TLabel
     Left = 10
-    Height = 19
+    Height = 17
     Hint = 'The x position'
     Top = 20
-    Width = 11
+    Width = 13
     Caption = 'X:'
     Color = clDefault
     Font.Height = -14
@@ -91,8 +91,8 @@ object FractalForm: TFractalForm
     ParentFont = False
   end
   object YEdit: TEdit
-    Left = 180
-    Height = 27
+    Left = 172
+    Height = 25
     Top = 14
     Width = 100
     Font.Height = -14
@@ -103,9 +103,9 @@ object FractalForm: TFractalForm
   end
   object YLabel: TLabel
     Left = 149
-    Height = 19
+    Height = 17
     Top = 20
-    Width = 11
+    Width = 13
     Caption = 'Y:'
     Color = clDefault
     Font.Height = -14
@@ -861,7 +861,7 @@ object FractalForm: TFractalForm
   object Timer1: TTimer
     Interval = 10
     OnTimer = Timer1Timer
-    Left = 8
-    Top = 8
+    Left = 48
+    Top = 192
   end
 end

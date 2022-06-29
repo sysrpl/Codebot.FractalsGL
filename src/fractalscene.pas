@@ -49,6 +49,8 @@ type
 
 implementation
 
+{$R shaders.res}
+
 { TFractalScene }
 
 procedure TFractalScene.SetZoom(Value: Double);
@@ -69,12 +71,12 @@ var
 begin
   Context.SetClearColor(1, 0, 0, 0);
   FZ := 1;
-  FZoomProg := TShaderProgram.CreateFromFile('zoom-hi');
+  FZoomProg := TShaderProgram.CreateFromAsset('zoom-hi');
   FZoomProg.Name := 'zoom';
   if not FZoomProg.Valid then
   begin
     FZoomProg.Free;
-    FZoomProg := TShaderProgram.CreateFromFile('zoom-lo');
+    FZoomProg := TShaderProgram.CreateFromAsset('zoom-lo');
     FZoomProg.Name := 'zoom';
     if not FZoomProg.Valid then
     begin
@@ -84,7 +86,7 @@ begin
       raise EOpenGLError.Create(S);
     end;
   end;
-  FTourProg := TShaderProgram.CreateFromFile('tour');
+  FTourProg := TShaderProgram.CreateFromAsset('tour');
   FTourProg.Name := 'tour';
   if not FTourProg.Valid then
   begin
