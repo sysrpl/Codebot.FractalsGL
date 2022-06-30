@@ -23,7 +23,6 @@ type
     SceneControl: TOpenGLControl;
     HelpShape: TShape;
     Timer: TTimer;
-    Timer1: TTimer;
     XEdit: TEdit;
     XLabel: TLabel;
     YEdit: TEdit;
@@ -45,7 +44,6 @@ type
       Y: Integer);
     procedure SceneControlMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
-    procedure Timer1Timer(Sender: TObject);
     procedure TimerTimer(Sender: TObject);
     procedure YEditKeyPress(Sender: TObject; var Key: char);
     procedure SceneControlMouseWheel(Sender: TObject; Shift: TShiftState;
@@ -353,10 +351,6 @@ begin
     else
       FFractal.MoveTo(FFractal.X, FFractal.Y, FZ);
   end;
-end;
-
-procedure TFractalForm.Timer1Timer(Sender: TObject);
-begin
 end;
 
 function CheckOpenGL: Boolean;
